@@ -1,10 +1,9 @@
+require("dotenv").config()
 const express = require("express")
-const dotenv = require("dotenv")
 const cors = require("cors")
-const mongoose = require("./database/dbConnect.js")
+const mongoose = require("./database/dbConnect")
+const index = require("./routes/index")
 const userRoutes = require("./routes/userRoutes")
-
-dotenv.config()
 
 const app = express()
 
@@ -13,6 +12,7 @@ app.use(cors())
 
 mongoose.connect()
 
+app.use(index)
 app.use(userRoutes)
 
 module.exports = app

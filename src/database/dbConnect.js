@@ -1,5 +1,4 @@
-const DATABASE_URI = "mongodb+srv://maysafigueiredo:czAAqDEjQhZ3QsSe@cluster0.odkwwb4.mongodb.net/?retryWrites=true&w=majority"
-
+const DATABASE_URI = process.env.DATABASE_URI
 const mongoose = require("mongoose")
 
 const connect = async() => {

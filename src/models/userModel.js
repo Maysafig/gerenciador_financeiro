@@ -3,7 +3,8 @@ const mongoose = require("mongoose")
 const userSchema = mongoose.Schema({
     _id: {
         type: mongoose.Schema.Types.ObjectId,
-        default: mongoose.Types.ObjectId
+        auto: true,
+        required: true
     },
 
     name: {
@@ -25,7 +26,7 @@ const userSchema = mongoose.Schema({
         required: true
     }
      
-},  { timestamps: true }, { versionKey: false })
+},  { timestamps: true })
 
 const User = mongoose.model("user", userSchema)
 
