@@ -1,24 +1,12 @@
-const InputComponent = ({
-  label,
-  placeholder,
-  value,
-  onChange,
-  type,
-  required
-}) => {
+import { forwardRef } from "react"
+
+const InputComponent = forwardRef(({ label, ...props }, ref) => {
   return (
     <>
       <label className="form-label">{label}</label>
-      <input
-        className="form-control"
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        type={type}
-        required={required}
-      />
+      <input {...props} ref={ref} className="form-control"/>
     </>
-  );
-};
+  )
+})
 
-export default InputComponent;
+export default InputComponent 
