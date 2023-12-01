@@ -1,7 +1,12 @@
-
 const Home = () => {
+    const token = localStorage.getItem("cripto")
 
-    return <p>Inicio</p>
+    // eslint-disable-next-line no-undef
+    useEffect(() => {
+        console.log(token)
+    }, [token])
+
+     return <p>Home</p>
 }
 
 export default Home
