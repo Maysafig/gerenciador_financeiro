@@ -15,5 +15,7 @@
     "airbnb",
     "Avenir",
     "Parens"
-  ]
+  ],
+  "colorHelper.disableTransparent": true,
+  "colorHelper.disableShadow": true
 }
