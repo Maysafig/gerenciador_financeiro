@@ -25,8 +25,10 @@ const Login = () => {
       try
       {
          const response = await axios.post("http://localhost:3001/login", data)
-         console.log(response?.data)
+         const token = { token: response?.data?.token }
+         localStorage.setItem("cripto", JSON.stringify(token))
          setLoading(false)
+         navigate("/")
       } catch (e) {
          alert("Erro, tente novamente")
          setLoading(false)
@@ -37,7 +39,7 @@ const Login = () => {
       <Main>
          <Body>
             {loading && <Loading />}
-            {!loading && ( 
+            {!loading && (
                <form onSubmit={handleSubmit(login)}>
                <Logo>Gerenciador Financeiro</Logo>
                <Input label="Email" placeholder="Digite o email" {...register("email")} />
