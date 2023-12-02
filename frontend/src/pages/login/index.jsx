@@ -27,6 +27,7 @@ const Login = () => {
          const token = { token: response?.data?.token }
          localStorage.setItem("cripto", JSON.stringify(token))
          setLoading(false)
+         navigate("/")
       } catch (e) {
          alert("Erro, tente novamente")
          setLoading(false)
